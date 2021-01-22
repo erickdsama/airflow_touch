@@ -1,0 +1,13 @@
+version: '3'
+services:
+    web:
+        container_name: "touch-airflow"
+        env_file:
+            - .env_flask
+        build: .
+        ports:
+            - "5000:5000"
+        volumes:
+            - .:/flask
+        expose:
+            - 5000
